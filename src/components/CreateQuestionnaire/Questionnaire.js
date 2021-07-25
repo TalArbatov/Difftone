@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { createQuestionnaire as createQuestionnaireAction } from '../../actions/questionnaireActions';
 import Question from './Question';
 import Title from './Title';
+import { Button, CardContent } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 const Questionnaire = ({
   createQuestionnaire
 }) => {
@@ -18,15 +21,20 @@ const Questionnaire = ({
   }
   console.log('questions', questions);
   return (
-    <div>
-      <Title onTitleChange={ onTitleChange }/>
-      <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>
-      {/* <button onClick={ addQuestion }>Add question</button> */}
+    <Card className="questionnaire-wrapper" variant="outlined">
+      <CardContent className="questionnaire-wrapper2" >
+        <Typography color="textSecondary" gutterBottom>
+            Please enter 
+          </Typography>
+        <Title onTitleChange={ onTitleChange }/>
+        <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>
+        {/* <button onClick={ addQuestion }>Add question</button> */}
 
-      <br />
-      <button onClick={ handleQuestionnaireCreation }>Submit</button>
-      {/* <h1>title: { title }</h1> */}
-    </div>
+        <br />
+        <Button variant="contained" color="primary" onClick={ handleQuestionnaireCreation }>Submit</Button>
+        {/* <h1>title: { title }</h1> */}
+      </CardContent>
+    </Card>
   );
 }
 

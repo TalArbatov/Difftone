@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 
+// TODO: input validation
 const Title = ({
   onTitleChange
 }) => {

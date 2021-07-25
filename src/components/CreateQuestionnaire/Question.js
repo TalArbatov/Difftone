@@ -16,14 +16,14 @@ const Question = ({
     setName('');
     setOptions([]);
   };
-  
+
   return (
     <Card className="question-wrapper" variant="outlined">
-    <CardContent className="questionnaire-wrapper2" >
-      <TextField id="outlined-basic" className="question-input" label={ `Enter Question Name (${ questionNum + 1 })` } variant="outlined" onChange={ e => setName(e.target.value) } value={ name }/>
-      <Option createOption={ option => setOptions([...options, option]) } optionsNum={ options.length }/>
-      <Button className="add-question-btn" variant="contained" color="primary" onClick={ handleQuestionSubmition }>Add Question</Button>
-    </CardContent>
+      <CardContent>
+        <TextField id="outlined-basic" className="question-input" label={ `Enter Question Name (${ questionNum + 1 })` } variant="outlined" onChange={ e => setName(e.target.value) } value={ name }/>
+        <Option createOption={ option => setOptions([...options, option]) } optionsNum={ options.length }/>
+        <Button className="add-question-btn" variant="contained" color="primary" onClick={ handleQuestionSubmition }>Add Question</Button>
+      </CardContent>
     </Card>
   );
 };

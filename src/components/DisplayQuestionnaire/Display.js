@@ -1,3 +1,4 @@
+import './Display.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,7 +9,7 @@ const Display = ({
 }) => {
   console.log(questionnaires)
   return (
-    <div>
+    <div className="display-wrapper">
       <Questionnaires questionnaires={ questionnaires }/>
     </div>
   );

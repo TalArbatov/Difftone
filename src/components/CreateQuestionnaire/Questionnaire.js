@@ -25,7 +25,7 @@ const Questionnaire = ({
 
   return (
     <Card className="questionnaire-wrapper" variant="outlined">
-      <CardContent className="questionnaire-wrapper2" >
+      <CardContent>
         { !message.active ? (
           <>
             <Typography color="textSecondary" gutterBottom>Create a Questionnaire </Typography>

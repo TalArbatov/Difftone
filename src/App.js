@@ -5,7 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Questionnaire from './components/QuestionnaireCreation/Questionnaire';
+import Questionnaire from './components/CreateQuestionnaire/Questionnaire';
+import Display from './components/DisplayQuestionnaire/Display';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
               <Link to="/create">Create Questionnaire</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/display">Display Questionnaire</Link>
             </li>
           </ul>
         </nav>
@@ -31,8 +32,8 @@ function App() {
           <Route path="/create">
             <Questionnaire />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/display">
+            <Display />
           </Route>
           <Route path="/">
             <Home />

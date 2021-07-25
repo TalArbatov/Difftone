@@ -12,6 +12,10 @@ const Questionnaire = ({
   const submitQuestion = (name, options) => {
     setQuestions([...questions, { name, options }]);
   }
+  const handleQuestionnaireCreation = () => {
+    console.log('tal2', title, questions);
+    createQuestionnaire(title, questions)
+  }
   console.log('questions', questions);
   return (
     <div>
@@ -20,8 +24,8 @@ const Questionnaire = ({
       {/* <button onClick={ addQuestion }>Add question</button> */}
 
       <br />
-      <button onClick={ createQuestionnaire }>Submit</button>
-      <h1>title: { title }</h1>
+      <button onClick={ handleQuestionnaireCreation }>Submit</button>
+      {/* <h1>title: { title }</h1> */}
     </div>
   );
 }
@@ -33,7 +37,7 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createQuestionnaire: questionnaire => dispatch(createQuestionnaireAction(questionnaire))
+  createQuestionnaire: (title, questions) => dispatch(createQuestionnaireAction(title, questions))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Questionnaire);

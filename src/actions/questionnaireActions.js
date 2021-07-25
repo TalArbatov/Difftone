@@ -1,8 +1,12 @@
 import { CREATE_QUESTIONNAIRE } from "./actionTypes"
 
-export const createQuestionnaire = questionnaire => {
+export const createQuestionnaire = (title, questions) => {
+  console.log('tal1', title, questions)
   return {
     type: CREATE_QUESTIONNAIRE,
-    payload: questionnaire
+    payload: {
+      title,
+      questions
+    }
   }
 }

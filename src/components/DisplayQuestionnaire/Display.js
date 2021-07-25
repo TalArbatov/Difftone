@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Questionnaires from './Questionnaires';
 
 const Display = ({
-  questionnaire
+  questionnaires
 }) => {
-  console.log(questionnaire)
+  console.log(questionnaires)
   return (
     <div>
-      <p></p>
+      <Questionnaires questionnaires={ questionnaires }/>
     </div>
   );
 };
@@ -18,6 +19,6 @@ Display.prototypes = {
 };
 
 const mapStateToProps = ({ questionnaire }) => ({
-  questionnaire: questionnaire.questionnaire
+  questionnaires: questionnaire.questionnaires
 });
-export default connect()(Display);
+export default connect(mapStateToProps)(Display);

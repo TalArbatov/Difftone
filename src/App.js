@@ -32,22 +32,6 @@ function App() {
           </div>
         </Toolbar>
       </AppBar>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/create">Create Questionnaire</Link>
-            </li>
-            <li>
-              <Link to="/display">Display Questionnaire</Link>
-            </li>
-          </ul>
-        </nav> */}
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <div className="application-wrapper">
           <div className="application-content">
             <Switch>
@@ -58,27 +42,14 @@ function App() {
                 <Display />
               </Route>
               <Route path="/">
-                <Home />
+                <Questionnaire />
               </Route>
             </Switch>
           </div>
         </div>
-        
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 export default App;

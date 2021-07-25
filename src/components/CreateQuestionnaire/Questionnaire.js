@@ -13,21 +13,32 @@ const Questionnaire = ({
 }) => {
   const [title, setTitle] = useState('');
   const [questions, setQuestions] = useState([]);
+  const [message, setMessage] = useState({ active: false, content: '' })
   const onTitleChange = e => setTitle(e.target.value);
   const submitQuestion = (name, options) => {
     setQuestions([...questions, { name, options }]);
   }
   const handleQuestionnaireCreation = () => {
+    setMessage({ active: true, content: 'Questionnaire submitted succesfully!' });
     createQuestionnaire(title, questions)
   }
 
   return (
     <Card className="questionnaire-wrapper" variant="outlined">
       <CardContent className="questionnaire-wrapper2" >
-        <Typography color="textSecondary" gutterBottom>Create a Questionnaire </Typography>
-        <Title onTitleChange={ onTitleChange }/>
-        <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>
-        <Button variant="contained" color="primary" onClick={ handleQuestionnaireCreation }>Submit</Button>
+        { !message.active ? (
+          <>
+            <Typography color="textSecondary" gutterBottom>Create a Questionnaire </Typography>
+            <Title onTitleChange={ onTitleChange }/>
+            <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>
+            <Button variant="contained" color="primary" onClick={ handleQuestionnaireCreation }>Submit</Button>
+          </>
+        ) : (
+          <p style={ { color: 'green' } }>{ message.content }</p>
+        )
+
+        }
+        
       </CardContent>
     </Card>
   );

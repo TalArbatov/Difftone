@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Questionnaire from './components/Questionnaire';
+import Questionnaire from './components/QuestionnaireCreation/Questionnaire';
 
 function App() {
   return (

@@ -1,9 +1,9 @@
 import './Display.css';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Questionnaires from './Questionnaires';
 
+// TODO: handle proptypes
 const Display = ({
   questionnaires
 }) => {

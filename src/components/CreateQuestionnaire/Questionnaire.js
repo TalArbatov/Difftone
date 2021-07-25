@@ -8,6 +8,11 @@ import { Button, CardContent } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 
+// TODO: input validation, message handler
+// TODO: component renders too many times
+// TODO: should be done with Context API instead of Redux (overkill)
+// TODO: refactor filenames (long & confusing names)
+
 const Questionnaire = ({
   createQuestionnaire
 }) => {
@@ -35,10 +40,7 @@ const Questionnaire = ({
           </>
         ) : (
           <p style={ { color: 'green' } }>{ message.content }</p>
-        )
-
-        }
-        
+        ) }
       </CardContent>
     </Card>
   );

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Option = ({
-  createOption
+  createOption,
+  optionsNum
 }) => {
   const [option, setOption] = useState('');
   const handleOptionCreation = () => {
@@ -11,7 +12,7 @@ const Option = ({
   };
   return (
     <div>
-      <label>Enter Option:</label>
+      <label>Enter Option ({ optionsNum + 1 }):</label>
       <input type="text" onChange={ e => setOption(e.target.value) } value={ option }></input>
       <button onClick={ handleOptionCreation }>Add</button>
     </div>
@@ -19,7 +20,8 @@ const Option = ({
 };
 
 Option.propTypes = {
-  createOption: PropTypes.func.isRequired
+  createOption: PropTypes.func.isRequired,
+  optionsNum: PropTypes.number.isRequired
 };
 
  export default Option;

@@ -12,7 +12,6 @@ const questionnaireReducer = (state = defaultState, action) => {
     
     // TODO: validate deep nesting (via lodash get or .?)
     case CREATE_QUESTIONNAIRE:
-      console.log('tal', action.payload.title, action.payload.questions);
       return { 
         ...state, 
         questionnaires: [

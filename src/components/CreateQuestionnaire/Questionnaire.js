@@ -20,7 +20,7 @@ const Questionnaire = ({
   return (
     <div>
       <Title onTitleChange={ onTitleChange }/>
-      <Question submitQuestion={ (name, options) => submitQuestion(name, options) }/>
+      <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>
       {/* <button onClick={ addQuestion }>Add question</button> */}
 
       <br />

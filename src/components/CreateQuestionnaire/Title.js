@@ -1,13 +1,15 @@
+import './Title.css';
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
 
 const Title = ({
   onTitleChange
 }) => {
   return (
-    <div>
-      <label>Enter Questionnaire title</label>
-      <input type="text" onChange={ onTitleChange }></input>
+    <div className="title-wrapper">
+      <TextField id="outlined-basic" label="Enter Questionnaire title" variant="outlined" onChange={ onTitleChange }/>
     </div>
   );
 };

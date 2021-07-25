@@ -5,3 +5,11 @@
 .menu-buttons {
   margin-left: 20px;
 }
+.app-bar {
+  margin-bottom: 30px;
+}
+.application-wrapper {
+  width: 100vw;
+  display: flex; 
+  justify-content: center;
+}

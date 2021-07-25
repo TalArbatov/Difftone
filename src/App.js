@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div>
-      <AppBar position="static">
+      <AppBar className="app-bar" position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
@@ -48,17 +48,22 @@ function App() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/create">
-            <Questionnaire />
-          </Route>
-          <Route path="/display">
-            <Display />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <div className="application-wrapper">
+          <div className="application-content">
+            <Switch>
+              <Route path="/create">
+                <Questionnaire />
+              </Route>
+              <Route path="/display">
+                <Display />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </div>
+        
       </div>
     </Router>
   );

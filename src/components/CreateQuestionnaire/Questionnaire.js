@@ -1,3 +1,4 @@
+import './Questionnaire.css';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createQuestionnaire as createQuestionnaireAction } from '../../actions/questionnaireActions';
@@ -24,7 +25,7 @@ const Questionnaire = ({
     <Card className="questionnaire-wrapper" variant="outlined">
       <CardContent className="questionnaire-wrapper2" >
         <Typography color="textSecondary" gutterBottom>
-            Please enter 
+            Create a Questionnaire 
           </Typography>
         <Title onTitleChange={ onTitleChange }/>
         <Question submitQuestion={ (name, options) => submitQuestion(name, options) } questionNum={ questions.length }/>

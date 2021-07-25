@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const Option = ({
   createOption,
@@ -11,10 +13,9 @@ const Option = ({
     setOption('');
   };
   return (
-    <div>
-      <label>Enter Option ({ optionsNum + 1 }):</label>
-      <input type="text" onChange={ e => setOption(e.target.value) } value={ option }></input>
-      <button onClick={ handleOptionCreation }>Add</button>
+    <div className="option-wrapper">
+      <TextField id="outlined-basic" className="option-input" label={ `Enter Option (${ optionsNum + 1 })` } variant="outlined" onChange={ e => setOption(e.target.value) } value={ option }/>
+      <Button variant="contained" className="add-option-btn" color="grey" onClick={ handleOptionCreation }>Add</Button>
     </div>
   );
 };

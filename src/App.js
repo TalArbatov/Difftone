@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Questionnaire from './components/Questionnaire';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/create">Create Questionnaire</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -27,8 +28,8 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/create">
+            <Questionnaire />
           </Route>
           <Route path="/users">
             <Users />

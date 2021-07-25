@@ -7,7 +7,6 @@ const defaultState = {
 };
 
 const questionnaireReducer = (state = defaultState, action) => {
-  console.log(action.type);
   switch(action.type) {
     
     // TODO: validate deep nesting (via lodash get or .?)

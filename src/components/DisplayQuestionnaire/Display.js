@@ -7,7 +7,6 @@ import Questionnaires from './Questionnaires';
 const Display = ({
   questionnaires
 }) => {
-  console.log(questionnaires)
   return (
     <div className="display-wrapper">
       <Questionnaires questionnaires={ questionnaires }/>

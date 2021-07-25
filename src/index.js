@@ -8,7 +8,6 @@ import configStore from './store';
 
 const store = configStore();
 
-console.log('tal', store.getState());
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={ store }>

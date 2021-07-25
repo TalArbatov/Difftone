@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Button, CardContent } from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 
 const Questionnaire = ({
   questionnaire
@@ -15,19 +15,19 @@ const Questionnaire = ({
       { questions.map((question, qIndex) => {
         return(
           
-          <Card className="display-question-wrapper" key={ qIndex } className="display-wrapper" variant="outlined">
+          <Card className="display-question-wrapper" key={ qIndex } ariant="outlined">
             <CardContent >
               <h4>#{ qIndex + 1 } {question.name}</h4>
               { question.options.map((option, oIndex) => {
                 return (
                   <div key={ oIndex }>
-                    <p>{oIndex + 1}. {option}</p>
+                    <Typography color="textSecondary" gutterBottom>• { option }</Typography>
                   </div>
-                )
+                );
               }) }
             </CardContent>
           </Card>
-        )
+        );
       }) }
       </CardContent>
     </Card>

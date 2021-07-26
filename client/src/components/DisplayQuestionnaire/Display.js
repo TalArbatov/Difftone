@@ -1,15 +1,19 @@
 import './Display.css';
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 import Questionnaires from './Questionnaires';
+import axios from 'axios';
 
 // TODO: handle proptypes
-const Display = ({
-  questionnaires
-}) => {
+const Display = () => {
+  const [questionnaires, setQuestionnaires] = useState([]);
+  useEffect(() => {
+    axios.get('/questionnaire').then(res => {
+      setQuestionnaires(res.data);
+    })
+  }, [])
   return (
     <div className="display-wrapper">
-      <Questionnaires questionnaires={ questionnaires }/>
+      <Questionnaires questionnaires={ questionnaires || [] }/>
     </div>
   );
 };
@@ -20,4 +24,4 @@ const Display = ({
 //   questionnaires: questionnaire.questionnaires
 // });
 
-export default connect(mapStateToProps)(Display);
+export default Display;

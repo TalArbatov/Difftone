@@ -7,6 +7,7 @@ import Title from './Title';
 import { Button, CardContent } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
 
 // TODO: input validation, message handler
 // TODO: component renders too many times
@@ -25,7 +26,11 @@ const Questionnaire = ({
   }
   const handleQuestionnaireCreation = () => {
     setMessage({ active: true, content: 'Questionnaire submitted succesfully!' });
-    createQuestionnaire(title, questions)
+    const questionnaire = { title, questions };
+    axios.post('/questionnaire', questionnaire).then(res => {
+      // TODO: refactor, should send questionnaire complete object
+      res.sucess && createQuestionnaire(title, questions);
+    });
   }
 
   return (

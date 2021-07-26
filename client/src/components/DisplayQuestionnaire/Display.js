@@ -1,5 +1,5 @@
 import './Display.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Questionnaires from './Questionnaires';
 
@@ -14,11 +14,10 @@ const Display = ({
   );
 };
 
-Display.prototypes = {
+// TODO: add PropTypes
 
-};
+// const mapStateToProps = ({ questionnaire }) => ({
+//   questionnaires: questionnaire.questionnaires
+// });
 
-const mapStateToProps = ({ questionnaire }) => ({
-  questionnaires: questionnaire.questionnaires
-});
 export default connect(mapStateToProps)(Display);

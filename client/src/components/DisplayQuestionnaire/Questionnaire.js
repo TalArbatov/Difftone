@@ -34,12 +34,6 @@ const Questionnaire = ({
   );
 };
 
-Questionnaire.prototypes = {
+// TODO: add PropTypes
 
-};
-
-const mapStateToProps = ({ questionnaire }) => ({
-  questionnaires: questionnaire.questionnaires
-});
-
-export default connect()(Questionnaire);
+export default Questionnaire;
